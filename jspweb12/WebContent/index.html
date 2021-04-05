@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb0_</title>
+<link rel="stylesheet" href="css/style.css"></link>
+<style type="text/css">
+	.mouseover {
+      background-color: pink;
+   }
+   .mouseout {
+      background-color: lightblue;
+   }
+</style>
+</head>
+<body>
+   <h3>마우스오버 또는 마우스아웃 이벤트 예제</h3>
+
+   <h2 class="mouseout">타이틀제목-0</h2>
+   <h2 class="mouseout">타이틀제목-1</h2>
+   <h2 class="mouseout">타이틀제목-2</h2>
+   <h2 class="mouseout">타이틀제목-3</h2>
+   <h2 class="mouseout">타이틀제목-4</h2>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- jq를 연동 -->
+<script>
+   // 이벤트나 함수를 정의하는 경우에는
+   $(document).ready(function(){
+      
+      $("h2").hover(
+            // 마우스가 올라감 mouseover, mouseenter(경계)
+            function(){ 
+               $(this).addClass("mouseover");
+               $(this).removeClass("mouseout");
+            }, 
+            // 마우스가 내려감 mouseout, mouseleave(경계)
+            function(){ 
+               $(this).addClass("mouseout");
+               $(this).removeClass("mouseover");
+            }
+      );
+      
+   });
+</script>
+</body>
+</html>
