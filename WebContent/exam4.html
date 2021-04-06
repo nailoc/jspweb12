@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>jspweb</title>
-<style type="text/css"></style>
+<style type="text/css">
+
+	p{
+		width: 480px;
+		text-align: center;
+	}
+	span {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background-color: lightgray;
+		border-radius: 10px;
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 
@@ -14,9 +28,24 @@
 </div>
 
 <p>
-	1 2 3 4
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
 </p>
 <script src="js/jquery-3.6.0.min.js"></script> <!-- jq를 연동 -->
-<script></script>
+<script>
+	$(document).ready(function(){
+		
+		$("span").click(function(){
+			
+			num = $(this).text();
+			image = "images/mslide"+num+"_480x200.gif";
+			$("img").attr("src", image);
+			
+		});
+		
+	});
+</script>
 </body>
 </html>
