@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb12</title>
+<link rel="stylesheet" href="css/style.css"></link>
+<style type="text/css"></style>
+</head>
+<body>
+	<h2>트리거 이벤트 이해하기</h2>
+	
+	<h3 id="click1">별시작1(클릭):</h3>
+	<button id="btn1">추가 클릭</button>
+	<h3 id="click2">별시작2(자동):</h3>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 사용하지 않으면 주석을 막을 것 -->
+<script>
+	$(document).ready(function(){
+		
+		$("button#btn1").click(function(){
+			$("#click1").html( $("#click1").html() + "★" );
+		});
+		
+		// 두번째 버튼 이벤트
+		$("h3#click2").click(function(){
+			$("#click2").html( $("#click2").html() + "★" );
+		});
+		
+		setInterval(function(){
+			$("h3#click2").trigger("click"); // 두번째 이벤트 자동
+		},1000);
+	});
+</script>
+</body>
+</html>

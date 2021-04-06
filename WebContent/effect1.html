@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb</title>
+<style type="text/css">
+	h3 {
+		border: 1px solid black;
+		width: 200px;
+	}
+</style>
+</head>
+<body>
+
+	<h3>열기 & 닫기</h3>
+	<div>
+		<h4>오늘의 요리</h4>
+		<p>오늘은 중국요리입니다</p>
+	</div>
+	
+	<h3>열기 & 닫기</h3>
+	<div>
+		<h4>내일의 요리</h4>
+		<p>내일은 프랑스요리입니다</p>
+	</div>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- jq를 연동 -->
+<script>
+	$(document).ready(function(){
+		
+		$("h3").click(function(){
+			
+			//$(this).next().toggle();
+			//$(this).next().slideToggle("slow");
+			$(this).next().fadeToggle("slow");
+			
+		});
+		
+	});
+	
+	// accordian 어코디언 (펼쳤다가 접었다가) ==> jquery 이용한 jqueryUI
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb</title>
+<style type="text/css"></style>
+</head>
+<body>
+
+<h3>로그인폼 이벤트</h3>
+
+<form action="exam2.html" method="GET" id="frm">
+	
+	<p><input type="text" name="userid" id="userid" placeholder="아이디"></p>
+	
+	<p><input type="password" name="userpw" id="userpw" placeholder="비밀번호"></p>
+	
+	<p><input type="submit" value="로그인하기"></p>
+	
+</form>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- jq를 연동 -->
+<script>
+
+	// 제이쿼리로 submit전송하기
+	$(document).ready(function(){
+		
+		$("input[type='submit']").click(function(event){
+			//제이쿼리 전송코드 
+			//입력된 아이디, 비밀번호 체크
+			var id = $("input:text").val();
+			var pw = $("input:password").val();
+			alert(id +"," + pw);
+			
+			//기본이벤트 제거
+			event.preventDefault();
+		});
+	});
+	
+</script>
+</body>
+</html>

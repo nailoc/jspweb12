@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb0_</title>
+<link rel="stylesheet" href="css/style.css"></link>
+<style type="text/css"></style>
+</head>
+<body>
+	<h3>키보드 입력시 글자 갯수 카운터</h3>
+	
+	<h4>글자수:0/2000</h4>
+	
+	<textarea cols="50" rows="5"></textarea>
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 사용하지 않으면 주석을 막을 것 -->
+<script>
+	
+	$(document).ready(function(){
+		
+		//keyup 눌러다가 올라올때
+		$("textarea").keyup(function(){
+			
+			var inputText = $(this).val();
+			var Leng = inputText.length;
+			// 갯수를 h4 에 출력하기
+			$("h4").html("글자수:"+Leng+"/2000");
+			if(Leng>200) {
+				$("h4").css("color", "red");
+			}else if(Leng>100) {
+				$("h4").css("color", "orange");
+			}
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb0_</title>
+<link rel="stylesheet" href="css/style.css"></link>
+<style type="text/css"></style>
+</head>
+<body>
+	<h2>on 이벤트 연결 예제</h2>
+	
+	<div id="wrap">
+		
+		<h3>타이틀제목-1</h3>
+		
+	</div>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 사용하지 않으면 주석을 막을 것 -->
+<script>
+	$(document).ready(function(){
+		
+		// on(이벤트명, 자식요소, 함수)
+		// delegate(자식요소, 이벤트명, 함수)
+		// 미래에 추가될 자식태그들도 이벤트 연결이 가능함
+		//$("body").delegate("h3", "click", function(){
+		$("body").on("click", "h3", function(){
+			var length = $("h3").length;
+			var curHtml = $(this).html();
+			
+			$("#wrap").append("<h3>" + curHtml + "," + length +"</h3>");
+		});
+	});
+</script>
+</body>
+</html>

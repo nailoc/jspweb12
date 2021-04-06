@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb0_</title>
+<link rel="stylesheet" href="css/style.css"></link>
+<style type="text/css">
+	#search_box {
+		border: 1px solid green;
+	}
+</style>
+</head>
+<body>
+	<h3>기본 이벤트 막기 예제</h3>
+	
+	<p id="search_box">
+		<a id="search" href="https://www.google.com">구글검색하기</a>
+	</p>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 사용하지 않으면 주석을 막을 것 -->
+<script>
+	$(document).ready(function(){
+		
+		// 선택자.이벤트메소드(함수구현)
+		$("a#search").click(function(event){
+			$(this).css("background-color","pink");
+			alert("검색하기");
+			//event.preventDefault();  // a 태그의 기본이벤트를 막음
+			
+			//event.stopPropagation(); // 이벤트 더블링을 막음
+			
+			return false;   		   // 유사한 자바스크립트 코드임
+		});
+		
+		$("p").click(function(){
+			alert("p태그가 선택되었습니다");
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb</title>
+<style type="text/css">
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+	}
+</style>
+</head>
+<body>
+
+<h3>애니메이션 효과 1</h3>
+
+<div>
+</div>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- jq를 연동 -->
+<script>
+
+	$(document).ready(function(){
+		
+		$("div").click(function(){
+			
+			var width= $(this).css("width");   //문자열
+			var height= $(this).css("height");
+			
+			$(this).animate(
+				{width: parseInt(width) + 100,
+				 height: parseInt(height) + 100,
+				 opacity: 0.5}  // jqueryUI 라이브러리
+				, 3000
+			);
+		});
+	});
+</script>
+</body>
+</html>
