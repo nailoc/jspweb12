@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹사이트_네비바</title>
+<link rel="stylesheet" href="css/style_index2.css"></link>
+
+</head>
+<body>
+	
+	<div class="wrapper">
+		
+		<header>
+			<div id="logo"><img src="images/logo_200x44.png"></div>
+			
+			<nav>
+				<ul class="menu">
+					<li><a href="">천문대소개</a>
+						<ul class="sub">
+							<li><a href="">인사말</a></li>
+							<li><a href="">연혁</a></li>
+							<li><a href="">찾아오는길</a></li>
+						</ul>
+					</li>
+					<li><a href="">이용안내</a>
+						<ul class="sub">
+							<li><a href="">본관안내</a></li>
+							<li><a href="">별관안내</a></li>
+							<li><a href="">서비스안내</a></li>
+						</ul>
+					</li>
+					<li><a href="">컴뮤니티</a></li>
+					<li><a href="">고객센터</a></li>
+				</ul>
+			</nav>		
+		</header>
+		
+		<div class="slideshow">
+			<div class="myslide">
+				<img src="images/slide1_1200x300.jpg">
+			</div>
+			<div class="myslide">
+				<img src="images/slide2_1200x300.jpg">
+			</div>
+			<div class="myslide">
+				<img src="images/slide3_1200x300.jpg">
+			</div>
+			
+			<a class="prev" onclick="plusslide(-1);">&#10094</a>
+			<a class="next" onclick="plusslide(1);">&#10095</a>
+		</div>
+		
+		<section>
+			<div class="left">공지사항</div>		
+			<div class="right">자유게시판</div>
+		</section>
+		<!--  aside></aside -->
+	
+		<footer>		
+			<address>&copy;copywriter korea space institude</address> 
+		</footer>
+	</div>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 사용하지 않으면 주석을 막을 것 -->
+<script src="js/jscript2.js"></script>
+</body>
+</html>
