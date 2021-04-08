@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb</title>
+<style type="text/css">
+	div {
+		width: 300px;
+		height: 60px;
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+
+<h3>자바스크립트+XML 비동기통신 예제</h3>
+
+<div id="target">
+</div>
+<br>
+<button onclick="getFromServer()">텍스트데이터가져오기</button>
+<script src="js/jquery-3.6.0.min.js"></script> <!-- jq를 연동 -->
+<script>
+	function getFromServer() {
+		
+		var xmlhttp;
+        if (window.XMLHttpRequest) { // 크롬등 브라우저체크
+        	// xmlhttprequest 객체 생성 = 비동기 통신
+			xmlhttp = new XMLHttpRequest();
+        }
+	          
+        xmlhttp.onreadystatechange = function () {
+    		// 1 연결시작
+    		// 2 응답받음
+    		// 3 응답처리
+        	// 4면 처리완료 그리고 200이면 처리성공
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            	//alert(xmlhttp.responseText);
+            	document.getElementById("target").innerText = xmlhttp.responseText;
+            }else{ // 에러처리
+            	//alert("실패");
+            	
+            }
+        }		
+        xmlhttp.open("GET", "textfile.txt", true);
+        xmlhttp.send();		
+		
+	}
+
+</script>
+</body>
+</html>

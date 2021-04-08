@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jspweb</title>
+<style type="text/css">
+	div {
+		width: 300px;
+		height: 60px;
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+
+<h3>jquery ajax 비동기통신 예제</h3>
+
+<div id="target">
+</div>
+<br>
+<button>텍스트데이터가져오기</button>
+
+<script src="js/jquery-3.6.0.min.js"></script> <!-- jq를 연동 -->
+<script>
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#target").load("textfile.txt");	
+		});		
+	});
+</script>
+</body>
+</html>
